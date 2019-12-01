@@ -1,0 +1,15 @@
+#!/bin/bash
+#export CLASSPATH=/home/burni/Runtime-Tester-Arch
+
+java NPB3_0_JAV.IS -np$1 CLASS=$2
+java NPB3_0_JAV.IS -np$1 CLASS=$2
+java NPB3_0_JAV.IS -np$1 CLASS=$2
+java NPB3_0_JAV.IS -np$1 CLASS=$2
+java NPB3_0_JAV.IS -np$1 CLASS=$2
+java NPB3_0_JAV.IS -np$1 CLASS=$2
+java NPB3_0_JAV.IS -np$1 CLASS=$2
+java NPB3_0_JAV.IS -np$1 CLASS=$2
+java NPB3_0_JAV.IS -np$1 CLASS=$2
+java NPB3_0_JAV.IS -np$1 CLASS=$2
+
+
