@@ -16,16 +16,20 @@
 counter=1
 while [ $counter -le $3 ]
 do
-java -mx1200M NPB3_0_JAV.IS -$1 CLASS=$2 | grep 'Time in'* > $1-$2.txt
-grep -Eo  '[0-9]+([.][0-9]+)' $1-$2.txt >> $1-$2-Times.txt
-#echo "$counter Tests done"
+java -mx2400M NPB3_0_JAV.IS -$1 CLASS=$2 | grep 'Time in'* > $1-$2.txt
+grep -Eo  '[0-9]+([.][0-9]+)' $1-$2.txt >> $1-$2-Times.csv
+echo "$counter of $3 Tests($1,$2) done"
 ((counter++))
 done
 #echo 'All Tests done'
 rm $1-$2.txt
 
 #echo "Mittelwert über $3 Werte bei $1 Threads und Benchmark größe $2" >> Mean.txt
-echo "Mean($3,$1,$2):" >> Mean.txt
-awk '{total += $1; count ++} END {print total/count }' $1-$2-Times.txt >> Mean.txt
-rm $1-$2-Times.txt
-echo "Finished"
+#echo "Mean($3,$1,$2):" >> Mean.txt
+#awk '{total += $1; count ++} END {print total/count }' $1-$2-Times.txt >> Mean.txt
+Param="$3,$1,$2,"
+Mean=$(awk '{total += $1; count ++} END {print total/count }' $1-$2-Times.csv) 
+echo "Mean($1,$2,$3) = $Mean" 
+echo "$Param$Mean" >> MeanTable.csv
+rm $1-$2-Times.csv
+#echo "Finished"

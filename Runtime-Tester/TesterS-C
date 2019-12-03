@@ -3,22 +3,19 @@
 # Set CLASSPATH to working Directory
 #export CLASSPATH=/home/burni/Runtime-Tester-Arch
 
-# ./SO np2 S 10 
-# ./SO serial S 5
 # $1 = (Int/Char)    Num of Threads OR Serial (np1,np2,... OR serial)
-# $2 = (Char)   Benchmark size (S,W,A,B,C,D,E,F)
-# $3 = (Int)    Test size (1,2,3,...)
+# $2 = (Int)         Test size (1,2,3,...)
 
 # Test ob Benchmark läuft
 #java NPB3_0_JAV.IS -$1 CLASS=$2
 
-./Tester $1 S 10
-echo "Tester: $1 S 10 Done"
-./Tester $1 W 10
-echo "Tester: $1 W 10 Done"
-./Tester $1 A 10
-echo "Tester: $1 A 10 Done"
-./Tester $1 B 10
-echo "Tester: $1 B 10 Done"
-./Tester $1 C 10
-echo "Tester: $1 C 10 Done"
+./Tester $1 S $2
+echo "Tester: $1 S $2 Done"
+./Tester $1 W $2
+echo "Tester: $1 W $2 Done"
+./Tester $1 A $2
+echo "Tester: $1 A $2 Done"
+./Tester $1 B $2
+echo "Tester: $1 B $2 Done"
+./Tester $1 C $2
+echo "Tester: $1 C $2 Done"

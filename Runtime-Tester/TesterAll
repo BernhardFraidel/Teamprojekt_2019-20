@@ -1,0 +1,35 @@
+#!/bin/bash 
+# Needs awk installed
+# Set CLASSPATH to working Directory
+#export CLASSPATH=/home/burni/Runtime-Tester-Arch
+
+# $1 = (Int/Char)    Num of Threads OR Serial (np1,np2,... OR serial)
+# $2 = (Int)         Test size (1,2,3,...)
+
+# Test ob Benchmark läuft
+#java NPB3_0_JAV.IS -$1 CLASS=$2
+
+Timer1=$(date +"%T")
+SECONDS=0
+
+echo "Test begin at $Timer1" 
+#./TesterS-C serial $1
+#echo "$1x all serial Classes done"
+#./TesterS-C np1 $1
+#echo "$1x all np1 Classes done"
+#./TesterS-C np2 $1
+#echo "$1x all np2 Classes done"
+./TesterS-C np4 $1
+echo "$1x all np4 Classes done"
+#./TesterS-C np8 $1
+#echo "$1x all np8 Classes done"
+#./TesterS-C np16 $1
+#echo "$1x all np16 Classes done"
+Timer2=$(date +"%T")
+duration=$SECONDS
+diff=$SECONDS
+Time=$(echo "$(($diff / 3600)) hours, $((($diff / 60) % 60)) minutes and $(($diff % 60)) seconds ") 
+echo "TesterAll $1x Finished at $Timer2 Time needed: $Time"
+
+
+
