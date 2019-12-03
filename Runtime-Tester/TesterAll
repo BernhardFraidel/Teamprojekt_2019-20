@@ -13,18 +13,18 @@ Timer1=$(date +"%T")
 SECONDS=0
 
 echo "Test begin at $Timer1" 
-#./TesterS-C serial $1
-#echo "$1x all serial Classes done"
-#./TesterS-C np1 $1
-#echo "$1x all np1 Classes done"
-#./TesterS-C np2 $1
-#echo "$1x all np2 Classes done"
+./TesterS-C serial $1
+echo "$1x all serial Classes done"
+./TesterS-C np1 $1
+echo "$1x all np1 Classes done"
+./TesterS-C np2 $1
+echo "$1x all np2 Classes done"
 ./TesterS-C np4 $1
 echo "$1x all np4 Classes done"
-#./TesterS-C np8 $1
-#echo "$1x all np8 Classes done"
-#./TesterS-C np16 $1
-#echo "$1x all np16 Classes done"
+./TesterS-C np8 $1
+echo "$1x all np8 Classes done"
+./TesterS-C np16 $1
+echo "$1x all np16 Classes done"
 Timer2=$(date +"%T")
 duration=$SECONDS
 diff=$SECONDS
